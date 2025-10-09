@@ -38,3 +38,7 @@ export const styles = StyleSheet.create({
     fontSize: 14,
   },
 })
+
+
+//npm install react-native-reanimated react-native-worklets react-native-gesture-handler
+//'react-native-worklets/plugin'

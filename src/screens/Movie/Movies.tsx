@@ -1,19 +1,30 @@
 import { getPopularMovies } from "@/src/services/MDBServices";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Dimensions, Text, TouchableOpacity, View } from "react-native";
 import { useSharedValue } from "react-native-reanimated";
 import Carousel, {
-    ICarouselInstance
+  ICarouselInstance
 } from "react-native-reanimated-carousel";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { styles } from "./styles";
 
-const { width } = Dimensions.get("window");
+interface Movie {
+  id: number;
+  title: string;
+  poster_path: string;
+  vote_average: number;
+  release_date: string;
+}
+
+const { width, height } = Dimensions.get("window");
 const data = [...new Array(6).keys()];
 
 const Movies = () => {
+  const [movies, setMovies] = useState<Movie[]>;
+
   useEffect(() => {
     getPopularMovies().then((res) => {
+      setMovies(res);
       console.log("Popular Movies: ", res);
     });
   }, []);

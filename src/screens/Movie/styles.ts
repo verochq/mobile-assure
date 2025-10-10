@@ -4,6 +4,8 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   header: {
     backgroundColor: '#007AFF',
@@ -25,5 +27,23 @@ export const styles = StyleSheet.create({
     marginTop: 12,
     fontSize: 16,
     color: '#666',
+  },
+  titleSection: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: 20,
+  },
+  buttonSection: {
+    position: "absolute",
+    flexDirection: 'row',
+    bottom:10,
+    gap: 20,
+  },
+  button: {
+    backgroundColor: '#4CAF50',
+    padding: 10,
+    borderRadius: 5,
+    alignItems: 'center',
   },
 });

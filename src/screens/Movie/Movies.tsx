@@ -75,11 +75,6 @@ const Movies = () => {
       <DAPagination
         count={5}
         index={activeIndex}
-        style={{
-          flexDirection: "row",
-          justifyContent: "center",
-          marginTop: 16,
-        }}
       />
       <DAListHeader title="Marvel studios"/>
     </View>

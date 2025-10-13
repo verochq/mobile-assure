@@ -7,4 +7,5 @@ export const styles = StyleSheet.create({
     width: width,
     height: height * 0.65,
   },
+  
 });

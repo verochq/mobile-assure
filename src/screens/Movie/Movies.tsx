@@ -1,13 +1,14 @@
+import { DAButton } from "@/src/components/atoms/DAButton/DAButton";
+import DAListHeader from "@/src/components/atoms/DAListHeader/DAListHeader";
+import { DAPagination } from "@/src/components/atoms/DAPagination/DAPagination";
+import { DAText } from "@/src/components/atoms/DAText/DAText";
 import { getPopularMovies } from "@/src/services/MDBServices";
-import React, { useEffect, useRef, useState } from "react";
-import { Dimensions, Text, TouchableOpacity, View } from "react-native";
-import { useSharedValue } from "react-native-reanimated";
-import Carousel, {
-  ICarouselInstance
-} from "react-native-reanimated-carousel";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { LinearGradient } from "expo-linear-gradient";
+import React, { useEffect, useState } from "react";
+import { Dimensions, View } from "react-native";
+import Carousel from "react-native-reanimated-carousel";
+import { MovieCard } from "./components/MovieCard";
 import { styles } from "./styles";
-
 interface Movie {
   id: number;
   title: string;
@@ -17,55 +18,71 @@ interface Movie {
 }
 
 const { width, height } = Dimensions.get("window");
-const data = [...new Array(6).keys()];
 
 const Movies = () => {
-  const [movies, setMovies] = useState<Movie[]>;
+  const [movies, setMovies] = useState<Movie[]>([]);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
     getPopularMovies().then((res) => {
-      setMovies(res);
-      console.log("Popular Movies: ", res);
+      setMovies(res.slice(0, 5));
+      console.log("Active index:", activeIndex);
     });
-  }, []);
-  const progress = useSharedValue<number>(0);
-  const ref = useRef<ICarouselInstance>(null);
+  }, [activeIndex]);
 
   return (
-    <SafeAreaView style={styles.container}>
-      <Text>Movies Component</Text>
+    <View style={styles.container}>
       <View>
         <Carousel
-          ref={ref}
           width={width}
-          height={width / 2}
-          data={data}
-          onProgressChange={progress}
-          renderItem={({ index }) => (
-            <View
-              style={{
-                flex: 1,
-                borderWidth: 1,
-                justifyContent: "center",
-                alignItems: "center",
-                position: "relative"
-              }}
-            >
-              <Text style={{ textAlign: "center", fontSize: 30 }}>{index}</Text>
-
-               <View style={styles.buttonSection}>
-                <TouchableOpacity style={styles.button} >
-                  <Text style={{ color: "#fff" }}>+ Wishlist</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.button} >
-                  <Text style={{ color: "#fff" }}>Details</Text>
-                </TouchableOpacity>
-              </View>
-            </View>
-          )}
+          height={height * 0.65}
+          data={movies}
+          onProgressChange={(_, absoluteProgress) => {
+            const index = Math.round(absoluteProgress);
+            if (index !== activeIndex) {
+              setActiveIndex(index);
+            }
+          }}
+          renderItem={({ item }) => <MovieCard posterPath={item.poster_path} />}
+        />
+        <LinearGradient
+          colors={["transparent", "rgba(0,0,0,1)"]}
+          style={[styles.gradient]}
+          pointerEvents="none"
         />
       </View>
-    </SafeAreaView>
+      <View style={styles.ButtonContainer}>
+        <View style={styles.overlay}>
+          <View style={styles.textRow}>
+            <DAText variant="subtitle">My list</DAText>
+            <DAText variant="subtitle">Discover</DAText>
+          </View>
+
+          <View style={styles.buttonRow}>
+            <DAButton
+              title="Wishlist"
+              variant="secondary"
+              onPress={() => console.log("Wishlist pressed")}
+            />
+            <DAButton
+              title="Details"
+              variant="primary"
+              onPress={() => console.log("Details pressed")}
+            />
+          </View>
+        </View>
+      </View>
+      <DAPagination
+        count={5}
+        index={activeIndex}
+        style={{
+          flexDirection: "row",
+          justifyContent: "center",
+          marginTop: 16,
+        }}
+      />
+      <DAListHeader title="Marvel studios"/>
+    </View>
   );
 };
 

@@ -5,7 +5,7 @@ interface MovieCardProps {
   posterPath: string;
 }
 
-export const MovieCard = ({ posterPath }: MovieCardProps) => {
+const MovieCard = ({ posterPath }: MovieCardProps) => {
   const imageUrlenv = process.env.EXPO_PUBLIC_TMDB_IMAGE_BASE_URL;
   const imageUrl = `${imageUrlenv}${posterPath}`;
 
@@ -17,3 +17,5 @@ export const MovieCard = ({ posterPath }: MovieCardProps) => {
     />
   );
 };
+
+export default MovieCard;

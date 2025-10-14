@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
     fontWeight: '500',
   },
   seeMore: {
-    color: colors.textSecondary, 
+    color: colors.buttonPrimary, 
     fontSize: 16,
     fontWeight: '500',
   },

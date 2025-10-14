@@ -1,5 +1,5 @@
 import { TouchableOpacity } from 'react-native';
-import { DAText } from '../DAText/DAText';
+import DAText from '../DAText/DAText';
 import { styles } from './styles';
 
 interface DAButtonProps {
@@ -8,12 +8,12 @@ interface DAButtonProps {
   variant?: 'primary' | 'secondary';
   disabled?: boolean;
 }
-export const DAButton = ({
+export default function DAButton({
   title,
   onPress,
   variant = 'primary',
   disabled = false
-}: DAButtonProps) => {
+}: DAButtonProps) {
   return (
     <TouchableOpacity
       style={[

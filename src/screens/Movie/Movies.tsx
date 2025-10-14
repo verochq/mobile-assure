@@ -1,3 +1,4 @@
+import GenreSegmentedControl from "@/src/components/atoms/DASegmentGenres/DASegmentGenres";
 import { LinearGradient } from "expo-linear-gradient";
 import React, { useEffect, useRef, useState } from "react";
 import { Dimensions, View } from "react-native";
@@ -10,7 +11,6 @@ import DAButton from "../../components/atoms/DAButton/DAButton";
 import DAText from "../../components/atoms/DAText/DAText";
 import { getGenres, getPopularMovies } from "../../services/MDBServices";
 import MovieCard from "./components/MovieCard/MovieCard";
-import MovieList from "./components/MovieList/MovieList";
 import { styles } from "./styles";
 
 const { width, height } = Dimensions.get("window");
@@ -22,6 +22,11 @@ interface Movie {
   vote_average: number;
   release_date: string;
 }
+
+const getByGenre = (id: number) => {
+  
+}
+
 
 const Movies = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
@@ -61,6 +66,17 @@ const Movies = () => {
         renderItem={({ item }) => <MovieCard posterPath={item.poster_path} />}
       />
 
+      <View style={{height:"25%", position:"absolute", top:height*0.06}}>
+      <GenreSegmentedControl
+        options={genreOptions}
+        selectedOption={selectedGenre}
+        onValueChange={(genre) => {
+          setSelectedGenre(genre);
+          console.log("Género seleccionado:", genre);
+        }}
+      />
+      </View>
+
       <LinearGradient
         colors={["rgba(0,0,0,0)", "rgba(0,0,0,0.8)", "rgba(0,0,0,1)"]}
         style={styles.gradient}
@@ -75,7 +91,7 @@ const Movies = () => {
 
           <View style={styles.buttonRow}>
             <DAButton
-              title="Wishlist"
+              title="+ Wishlist"
               variant="secondary"
               onPress={() => console.log("Wishlist pressed")}
             />
@@ -97,15 +113,9 @@ const Movies = () => {
         onPress={onPressPagination}
       />
 
-      <MovieList title="New releases" data={movies} />
+      {/* <MovieList title="New releases" data={movies} /> */}
 
-      {/* <GenreSegmentedControl
-        options={genreOptions}
-        onValueChange={(genre) => {
-          setSelectedGenre(genre);
-          console.log("Género seleccionado:", genre);
-        }}
-      /> */}
+      
     </View>
   );
 };

@@ -1,31 +1,33 @@
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
-  container: {
-    paddingHorizontal: 6,
-    paddingVertical: 0,
-    height: "20%",
-    backgroundColor: 'rgba(29, 26, 26, 0.63)',
+  scrollContainer: {
+    height: 50, 
+    alignSelf: 'center', 
+  },
+  contentContainer: {
+    paddingHorizontal: 8,
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: 'rgba(106, 101, 101, 0.25)',
+    borderRadius: 20,
+    paddingVertical: 4,
   },
   button: {
-    paddingHorizontal: 25,
-    borderRadius: 20,
-    
-    marginRight: 0,
-    
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    borderRadius: 16,
   },
   buttonActive: {
     backgroundColor: '#FFFFFF',
   },
   text: {
     color: '#FFFFFF',
-    fontSize: 15,
-    fontWeight: '400',
-    margin: 'auto'
-
+    fontSize: 14,
+    fontWeight: '500',
   },
   textActive: {
-    color:"black",
+    color: '#000000',
     fontWeight: '700',
-  }, 
+  },
 });

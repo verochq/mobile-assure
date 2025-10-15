@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import { ScrollView, Text, TouchableOpacity } from 'react-native';
 import { styles } from "./style";
 
 interface GenreSegmentedControlProps {
@@ -17,9 +17,9 @@ const GenreSegmentedControl = ({
     <ScrollView
       horizontal
       showsHorizontalScrollIndicator={false}
-      contentContainerStyle={styles.container}
+      style={styles.scrollContainer} 
+      contentContainerStyle={styles.contentContainer} 
     >
-    <View style={{backgroundColor:"rgba(202, 184, 184, 0.24)", display:"flex", flexDirection:"row", borderRadius:20, padding:1}}>
       {options.map((option) => (
         <TouchableOpacity
           key={option}
@@ -39,7 +39,6 @@ const GenreSegmentedControl = ({
           </Text>
         </TouchableOpacity>
       ))}
-     </View> 
     </ScrollView>
   );
 };

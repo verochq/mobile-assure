@@ -69,28 +69,23 @@ export const getGenres = async () => {
   }
 };
 
-export const getGenresNames = () => {
-  getGenres().then((res) => {
-    const genreNames = res.map((mov: Genre) => mov.name)})
-}
+export const getMovieByGenre = async (genreName: string): Promise<Movie[]> => {
 
-export const getGenre = (genre: string) => {
-  getGenres().then((res) => {
-    const dataGenre = res.find((mov: Genre) => {if (mov.name === genre) mov});
-    return dataGenre;
-  })
-}
+  try {
+    const genres = await getGenres();
+    const targetGenre = genres.find((genre: Genre)=> genre.name.toLowerCase() === genreName.toLowerCase());
 
-export const getMovieByGenre = (genre: string) => {
-
-  const dataGenre = getGenre(genre);
-  getPopularMovies().then((res) => {
-    if (res) {
-      const movies = res.filter((movie: Movie) => {
-        if (movie.genre_ids.includes(5)) {
-
-        }
-      })
+    if (!targetGenre) {
+      console.log("Genre not found");
+      return [];
     }
-  })
+
+    const movies = await getPopularMovies();
+    const filteredMovies = movies.filter((movie: Movie) => movie.genre_ids.includes(targetGenre.id));
+
+    return filteredMovies;
+  } catch (error) {
+    console.error("Error in getMoviesByGenre: ", error);
+    return [];
+  }
 }

@@ -22,7 +22,6 @@ export const useMovieData = () => {
         ]);
 
         setMovies(moviesRes.slice(0, 5));
-
         const genreNames = genresRes
           .map((g: { name: string }) => g.name)
           .slice(0, 7);

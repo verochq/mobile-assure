@@ -2,6 +2,7 @@ import { useMovieData } from "@/src/hooks/useMovieData";
 import { useMoviesByGenreName } from "@/src/hooks/useMoviesByGenre";
 import React, { useRef, useState } from "react";
 import { Dimensions, View } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
 import { useSharedValue } from "react-native-reanimated";
 import Carousel, {
   ICarouselInstance,
@@ -36,6 +37,8 @@ const Movies = () => {
   return (
     <View style={styles.container}>
       
+      <ScrollView>
+
       <View style={{ height: height * 0.65, position:"relative" }}>
         <Carousel
         ref={ref}
@@ -66,6 +69,8 @@ const Movies = () => {
       />
 
       <MovieList title="Action" data={moviesByGenre}/>
+      <MovieList title="Popular" data={movies}/>
+      </ScrollView>
     </View>
   );
 };

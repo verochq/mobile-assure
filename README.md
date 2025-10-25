@@ -1,14 +1,17 @@
-This is a mobile project created for the **Digital Academy** training program.
+
+# Welcome to _mobile-assure_ 📱
+
+This is a mobile project created for **Digital Academy** training program.
 
 <p align="center">
-  <img src="https://tse4.mm.bing.net/th/id/OIP.rlM39EHU1JE8Q-UMBkpGiAAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" width="420"/>
+  <img src="https://tse4.mm.bing.net/th/id/OIP.rlM39EHU1JE8Q-UMBkpGiAAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" width="200"/>
 </p>
 
 ---
 
 ### 🎬 About the Project
 
-**Movies App** is a **React Native** mobile app that offers a **simple and elegant way to explore movies**.  
+**Movies App** is a **React Native** mobile app built to offer a **simple and elegant way to explore movies**.  
 It provides users with **reliable information** — including cast, genres, ratings, and release details — all powered by [**The Movie Database (TMDb)**](https://www.themoviedb.org/).  
 
 Designed with a focus on **clarity, performance, and modern aesthetics**, the app delivers a smooth experience in both **Light and Dark themes**.  
@@ -19,15 +22,15 @@ Designed with a focus on **clarity, performance, and modern aesthetics**, the ap
 ---
 
 ## 📑 Index
-1. [🚀 Getting Started](#getting-started)
-   - [🧩 Prerequisites](#prerequisites)
-   - [📦 Installation](#installation)
-   - [🔑 Environment Variables](#environment-variables)
-   - [▶️ Running the App](#running-the-app)
-2. [📁 Folder Structure](#folder-structure)
-3. [🛠 Scripts & Commands](#scripts--commands)
-4. [📱 App Preview](#app-preview)
-   - [🖼 Screenshots](#screenshots)
+1. [Getting Started](#-getting-started)
+   - [Prerequisites](#-prerequisites)
+   - [Installation](#-installation)
+   - [Environment Variables](#-environment-variables)
+   - [Running the App](#-running-the-app)
+2. [Folder Structure](#folder-structure)
+3. [Scripts & Commands](#scripts--commands)
+4. [App Preview](#app-preview)
+   - [Screenshots](#screenshots)
 
 ---
 
@@ -36,15 +39,14 @@ Designed with a focus on **clarity, performance, and modern aesthetics**, the ap
 Follow these steps to set up and run the project locally.
 
 ### 🧩 Prerequisites
-Make sure you have the following installed on your Windows system:
+Make sure you have the following installed on your system (Windows):
 
 - [Node.js](https://nodejs.org/) (v18 or higher recommended)
 - [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
-- [Java JDK 17+](https://www.oracle.com/java/technologies/javase-jdk17-downloads.html)
-- [Android Studio](https://developer.android.com/studio) (with Android SDK and AVD Manager configured)
-- [React Native CLI](https://reactnative.dev/docs/environment-setup)
+- [Expo CLI](https://docs.expo.dev/get-started/installation/)
+- Android Studio + Android Emulator ([Setup guide](https://docs.expo.dev/get-started/set-up-your-environment/?mode=development-build&platform=android&device=simulated))
 
-> This setup allows you to run the app on a **simulated Android device** or on a **real device via USB debugging**.
+> This setup allows you to run the app on a simulated Android device directly from your Windows machine.
 
 ### 📦 Installation
 Clone the repository and install dependencies:
@@ -68,35 +70,20 @@ TMDB_IMAGE_BASE_URL=https://image.tmdb.org/t/p/original
 > ⚠️ Make sure your TMDb API credentials are valid. You can get them from [The Movie Database API](https://www.themoviedb.org/settings/api).
 
 ### ▶️ Running the App
-Start the Metro bundler:
-
 ```bash
-npx react-native start
+npx expo start
 ```
 
-In another terminal, run the app on an Android emulator or connected device:
+- Press **`a`** to run on Android emulator  
+- Press **`w`** to open web preview  
 
+### 🏗 Build & Deployment
 ```bash
-npx react-native run-android
-```
+# Build Android APK
+expo build:android -t apk
 
-> 💡 If the emulator doesn’t start automatically, open **Android Studio → Tools → AVD Manager** and launch it manually.
-
----
-
-## 🏗 Build & Deployment
-
-To generate a production build (APK):
-
-```bash
-cd android
-./gradlew assembleRelease
-```
-
-Your APK will be located in:
-
-```
-android/app/build/outputs/apk/release/app-release.apk
+# Build Android AAB
+expo build:android -t app-bundle
 ```
 
 ---
@@ -116,6 +103,7 @@ src/
 .env            → Environment variables file
 App.tsx         → Main component
 index.js        → Entry point for React Native app
+Index.tsx       → Main application component
 ```
 
 ---
@@ -123,10 +111,10 @@ index.js        → Entry point for React Native app
 ## 🛠 Scripts & Commands
 
 ```bash
-npm start              # Start Metro bundler
-npm run android        # Build and run app on Android emulator or device
-npm run lint           # Run ESLint for code style checking
-npm run clean          # Clear Metro and Gradle cache
+npm start          # Start the Expo development server
+npm run android    # Open app in Android emulator
+npm run ios        # Open app in iOS simulator (macOS only)
+npm run web        # Run the app in a web browser
 ```
 
 ---
@@ -136,9 +124,9 @@ npm run clean          # Clear Metro and Gradle cache
 ### Screenshots
 
 <p align="center">
-  <img src="https://i.imgur.com/7BEZmkv.png" width="180"/>
-  <img src="https://i.imgur.com/yugF6J2.png" width="180"/>
-  <img src="https://i.imgur.com/J0Hq71I.png" width="180"/>
-  <img src="https://i.imgur.com/4BZNiO7.png" width="180"/>
-  <img src="https://i.imgur.com/MvBmWQw.png" width="180"/>
+  <img src="https://i.imgur.com/VuwzmnM.png" width="120"/>
+  <img src="https://i.imgur.com/Joh3Q0P.png" width="120"/>
+  <img src="https://i.imgur.com/DAapV4o.png" width="120"/>
+  <img src="https://i.imgur.com/Dmp8qGf.png" width="120"/>
+  <img src="https://i.imgur.com/VNzXeLX.png" width="120"/>
 </p>

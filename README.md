@@ -165,10 +165,10 @@ npm run clean         # Clean build cache (manual setup)
 ### Screenshots  
 
 <p align="center">
-  <img src="https://i.imgur.com/VuwzmnM.png" width="120"/>
-  <img src="https://i.imgur.com/Joh3Q0P.png" width="120"/>
-  <img src="https://i.imgur.com/DAapV4o.png" width="120"/>
-  <img src="https://i.imgur.com/Dmp8qGf.png" width="120"/>
-  <img src="https://i.imgur.com/VNzXeLX.png" width="120"/>
+  <img src="https://i.imgur.com/7BEZmkv.png" width="120"/>
+  <img src="https://i.imgur.com/yugF6J2.png" width="120"/>
+  <img src="https://i.imgur.com/J0Hq71I.png" width="120"/>
+  <img src="https://i.imgur.com/4BZNiO7.png" width="120"/>
+  <img src="https://i.imgur.com/MvBmWQw.png" width="120"/>
 </p>
 

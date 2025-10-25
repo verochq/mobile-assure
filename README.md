@@ -1,58 +1,55 @@
-# Welcome to _mobile-assure_ 📱  
 
-This is a mobile project created for the **Digital Academy** training program provided by:
+# Welcome to _mobile-assure_ 📱
+
+This is a mobile project created for **Digital Academy** training program.
 
 <p align="center">
-  <img src="https://tse4.mm.bing.net/th/id/OIP.rlM39EHU1JE8Q-UMBkpGiAAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" width="180" />
-</p>  
+  <img src="https://tse4.mm.bing.net/th/id/OIP.rlM39EHU1JE8Q-UMBkpGiAAAAA?rs=1&pid=ImgDetMain&o=7&rm=3" width="200"/>
+</p>
 
 ---
 
-## 🎬 About the Project  
+### 🎬 About the Project
 
-**Movies App** is a **React Native** mobile application built to provide a **simple, elegant, and efficient way to explore movies**.  
-It allows users to view **cast, genres, ratings, and release information**, powered by [**The Movie Database (TMDb)**](https://www.themoviedb.org/).  
+**Movies App** is a **React Native** mobile app built to offer a **simple and elegant way to explore movies**.  
+It provides users with **reliable information** — including cast, genres, ratings, and release details — all powered by [**The Movie Database (TMDb)**](https://www.themoviedb.org/).  
 
-The design focuses on **clarity, performance, and modern aesthetics**, supporting both **Light and Dark modes**.  
+Designed with a focus on **clarity, performance, and modern aesthetics**, the app delivers a smooth experience in both **Light and Dark themes**.  
 
 🎨 **Figma Design:**  
-[Movies App – Light & Dark Theme](https://www.figma.com/design/ku48eB0asVO5bmJFPDEGOD/Movies-mobile-app-home---Light---Dark--Community-?node-id=203-1309&p=f&t=uSFdgiceMk50ZV8B-0)
+[Movies App – Light & Dark Theme](https://www.figma.com/design/ku48eB0asVO5bmJFPDEGOD/Movies-mobile-app-home---Light---Dark--Community-?node-id=203-1309&p=f&t=uSFdgiceMk50ZV8B)
 
 ---
 
-## 🧭 Index  
-
-1. [Getting Started](#-getting-started)  
-   - [Prerequisites](#-prerequisites)  
-   - [Installation](#-installation)  
-   - [Environment Variables](#-environment-variables)  
-   - [Running the App](#-running-the-app)  
-2. [Folder Structure](#-folder-structure)  
-3. [Scripts & Commands](#-scripts--commands)  
-4. [App Preview](#-app-preview)  
+## 📑 Index
+1. [Getting Started](#-getting-started)
+   - [Prerequisites](#-prerequisites)
+   - [Installation](#-installation)
+   - [Environment Variables](#-environment-variables)
+   - [Running the App](#-running-the-app)
+2. [Folder Structure](#folder-structure)
+3. [Scripts & Commands](#scripts--commands)
+4. [App Preview](#app-preview)
+   - [Screenshots](#screenshots)
 
 ---
 
-## 🚀 Getting Started  
+## 🚀 Getting Started
 
 Follow these steps to set up and run the project locally.
 
-### 🧩 Prerequisites  
+### 🧩 Prerequisites
+Make sure you have the following installed on your system (Windows):
 
-Make sure you have the following installed:  
-- [Node.js](https://nodejs.org/) (v18 or higher recommended)  
-- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)  
-- [Expo CLI](https://docs.expo.dev/get-started/installation/)  
+- [Node.js](https://nodejs.org/) (v18 or higher recommended)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+- [Expo CLI](https://docs.expo.dev/get-started/installation/)
+- Android Studio + Android Emulator ([Setup guide](https://docs.expo.dev/get-started/set-up-your-environment/?mode=development-build&platform=android&device=simulated))
 
-> 💡 For detailed setup instructions, check:  
-> - [React Native Environment Setup](https://reactnative.dev/docs/set-up-your-environment)  
-> - [Expo Environment Setup](https://docs.expo.dev/get-started/set-up-your-environment/?mode=development-build&platform=android&device=simulated)
+> This setup allows you to run the app on a simulated Android device directly from your Windows machine.
 
----
-
-### 📦 Installation  
-
-Clone the repository and install dependencies:  
+### 📦 Installation
+Clone the repository and install dependencies:
 
 ```bash
 git clone <your-repo-url>
@@ -60,11 +57,8 @@ cd <your-project-folder>
 npm install
 ```
 
----
-
-### 🔑 Environment Variables  
-
-Create a `.env` file in your root directory and add:  
+### 🔑 Environment Variables
+Create a `.env` file in the root of your project and add:
 
 ```bash
 TMDB_ACCESS_TOKEN=
@@ -73,24 +67,17 @@ TMDB_BASE_URL=https://api.themoviedb.org/3
 TMDB_IMAGE_BASE_URL=https://image.tmdb.org/t/p/original
 ```
 
-> ⚠️ Obtain your TMDb API credentials from [The Movie Database API](https://www.themoviedb.org/settings/api).
+> ⚠️ Make sure your TMDb API credentials are valid. You can get them from [The Movie Database API](https://www.themoviedb.org/settings/api).
 
----
-
-### ▶️ Running the App  
-
-Start in development mode:  
-
+### ▶️ Running the App
 ```bash
 npx expo start
 ```
 
----
+- Press **`a`** to run on Android emulator  
+- Press **`w`** to open web preview  
 
-### 🏗 Build & Deployment  
-
-To build production versions:  
-
+### 🏗 Build & Deployment
 ```bash
 # Build Android APK
 expo build:android -t apk
@@ -101,51 +88,45 @@ expo build:android -t app-bundle
 
 ---
 
-## 📁 Folder Structure  
+## 📁 Folder Structure
 
 ```
 src/
-  ├─ assets/       → Images
-  ├─ components/   → Reusable UI components
-  ├─ constants/    → Colors and global constants
-  ├─ contexts/     → React context providers
-  ├─ hooks/        → Custom hooks
-  ├─ navigation/   → React Navigation setup
-  ├─ screens/      → App screens
-  └─ types/        → TypeScript types
-
-.env              → Environment variables
-App.tsx           → Main app component
-index.js          → App entry point
-Index.tsx         → Main application component
+  ├─ assets     → Images
+  ├─ components → Reusable UI components
+  ├─ constants  → Colors and global constants
+  ├─ contexts   → React context providers
+  ├─ hooks      → Custom hooks
+  ├─ navigation → React Navigation setup
+  ├─ screens    → App screens
+  └─ types      → TypeScript interfaces and type definitions
+.env            → Environment variables file
+App.tsx         → Main component
+index.js        → Entry point for React Native appA
+Index.tsx       → Main application component
 ```
 
 ---
 
-## 🛠 Scripts & Commands  
+## 🛠 Scripts & Commands
 
 ```bash
-npm start          # Start Expo development server
-npm run android    # Launch Android emulator
-npm run ios        # Launch iOS simulator (macOS only)
+npm start          # Start the Expo development server
+npm run android    # Open app in Android emulator
+npm run ios        # Open app in iOS simulator (macOS only)
 npm run web        # Run the app in a web browser
 ```
 
 ---
 
-## 📱 App Preview  
+## 📱 App Preview
 
-### Screenshots  
-
-<p align="center">
-  <img src="https://i.imgur.com/VuwzmnM.png" width="30%" />
-  <img src="https://i.imgur.com/Joh3Q0P.png" width="30%" />
-  <img src="https://i.imgur.com/DAapV4o.png" width="30%" />
-</p>
+### Screenshots
 
 <p align="center">
-  <img src="https://i.imgur.com/Dmp8qGf.png" width="30%" />
-  <img src="https://i.imgur.com/VNzXeLX.png" width="30%" />
+  <img src="https://i.imgur.com/VuwzmnM.png" width="120"/>
+  <img src="https://i.imgur.com/Joh3Q0P.png" width="120"/>
+  <img src="https://i.imgur.com/DAapV4o.png" width="120"/>
+  <img src="https://i.imgur.com/Dmp8qGf.png" width="120"/>
+  <img src="https://i.imgur.com/VNzXeLX.png" width="120"/>
 </p>
-
----

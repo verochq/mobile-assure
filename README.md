@@ -28,8 +28,6 @@ Designed with a focus on **clarity, performance, and modern aesthetics**, the ap
 3. [Scripts & Commands](#scripts--commands)
 4. [App Preview](#app-preview)
    - [Screenshots](#screenshots)
-
-
 ---
 
 ## 🚀 Getting Started
